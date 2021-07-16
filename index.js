@@ -249,15 +249,16 @@ function get20s(array) {
   const newNames = [];
   for (let i = 0; i < array.length; i++){
     const newString = array[i].years;
-    const maybe = newString.split(',');
-    if (maybe >= '1900 - 1900' || maybe <= '2000 - 2000'){
+    const maybe = newString.split(' ');
+    if (maybe >= '1900' || maybe <= '2000'){
       newNames.push('Yes');
     }
   }
   console.log(newNames)
 }
 const newString = artists[0].years;
-const maybe = newString.split(',');
+const maybe = newString.split(' ');
+const tryThis = Number(maybe);
 console.log(maybe)
 
 console.log('Task 4:', get20s(artists));

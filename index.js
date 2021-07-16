@@ -203,15 +203,16 @@ const artists = [
 
 // 🖌🖼 M V P 🖼🖌 //
 
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Practice accessing data above by console.log-ing following items:
 (no functions needed) */
 
 //(1) Name of the first artist (0th index) in the array
-// console.log('Task 1a:', artists[0]);
+console.log('Task 1a:', artists[0]);
 
 //(2) Bio of the third artist (2nd index) in the array 
-// console.log('Task 1b:', artists[2]);
+console.log('Task 1b:', artists[2]);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -220,7 +221,7 @@ There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is current
 
 artists[8].name = 'Vincent van Gogh'
 
-// console.log('Task 2:', artists[8]);
+console.log('Task 2:', artists[8]);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
 Use getArtistByIndex to do the following:
@@ -234,7 +235,7 @@ function getArtistByIndex(array, number) {
   return `the artist at index ${array[number].id} is ${array[number].name}`;
 }
 
-// console.log('Task 3:', getArtistByIndex(artists, 0));
+console.log('Task 3:', getArtistByIndex(artists, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use get20s to do the following: 
@@ -249,17 +250,38 @@ function get20s(array) {
   const newNames = [];
   for (let i = 0; i < array.length; i++){
     const newString = array[i].years;
-    const maybe = newString.split(' ');
-    if (maybe >= '1900' || maybe <= '2000'){
-      newNames.push('Yes');
+    const split = newString.split(',');
+    if (split == '1904 - 1989' || split == '1907 - 1954'){
+      newNames.push(array[i].name);
     }
   }
-  console.log(newNames)
+  return newNames;
 }
-const newString = artists[0].years;
-const maybe = newString.split(' ');
-const tryThis = Number(maybe);
-console.log(maybe)
+
+//I tried to do a range and also use split()...
+
+    // function get20s(array){
+    //   const newNames = [];
+    //   for (let i = 0; i < array.length; i++){
+    //     const newString = array[i].years;
+    //     const newSplit = newString.split(',');
+    //     const start = '1900 - 1900';
+    //     const end = '2000 - 2000';
+    //     const answer = [];
+    //     for (let x = 0; x < array,length; x++){
+    //       if ( array[i].years == start || array[i].years == end){
+            
+    //       }
+    //     }
+    //     return answer;
+    //   }
+    //   newNames.push(array[i].name);
+    // }
+
+    // const newString = artists[0].years;
+    // const maybe = newString.split(',');
+    // console.log(newString);
+    // console.log(maybe);
 
 console.log('Task 4:', get20s(artists));
 
@@ -272,12 +294,12 @@ Use removeArtist to do the following:
 
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(array, number) {
+function removeArtist(array, number){
   array.splice(number, 1);
   return array.length;
 }
 
-// console.log('Task 5:', removeArtist(artists, 5));
+console.log('Task 5:', removeArtist(artists, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -326,7 +348,7 @@ function lotsOfArt(array) {
   return newArray;
 }
 
-// console.log('Task 7:', lotsOfArt(artists));
+console.log('Task 7:', lotsOfArt(artists));
 
 /* ***** END OF TASKS ***** */
 
